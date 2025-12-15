@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+/* -------------------------------
+   PAGE HEADING
+-------------------------------- */
+.page-title {
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 30px 0;
+  letter-spacing: 0.5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-left: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* -------------------------------
+   NAVBAR
+-------------------------------- */
+.khabar-navbar {
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: #ffc107;
+  border-radius: 10px;
+}
+
+/* -------------------------------
+   NEWS CARD (MAIN FIX)
+-------------------------------- */
+.news-card {
+  height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Image */
+.news-image-wrapper {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.news-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Source badge */
+.news-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Card content */
+.card-body {
   display: flex;
   flex-direction: column;
+}
+
+/* Title */
+.news-title {
+  height: 48px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  height: 44px;
+  overflow: hidden;
+}
+
+/* Description */
+.news-desc {
+  height: 72px;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  height: 66px;
+  overflow: hidden;
+}
+
+/* Button */
+.btn-outline-danger {
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* -------------------------------
+   SKELETON LOADER
+-------------------------------- */
+.skeleton-img {
+  height: 160px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-text {
+  height: 12px;
+  background: #e5e7eb;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+/* -------------------------------
+   DARK MODE
+-------------------------------- */
+.dark-theme {
+  background-color: #121212;
+  color: #e5e5e5;
+  min-height: 100vh;
+}
+
+.dark-theme .news-card {
+  background-color: #1e1e1e;
+  color: #e5e5e5;
+}
+
+.dark-theme .news-desc {
+  color: #cfcfcf;
+}
+
+.dark-theme .navbar {
+  background: linear-gradient(90deg, #000000, #1c1c1c);
+}
+
+.dark-theme .btn-outline-danger {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.dark-theme .btn-outline-danger:hover {
+  background-color: #ff6b6b;
+  color: #000;
+}
+/* Bookmark icon */
+.bookmark-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.bookmark-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bookmark-btn.saved {
+  color: #ffc107;
 }
