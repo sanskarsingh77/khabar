@@ -34,7 +34,8 @@ export class News extends Component {
 
       const maxResults = this.state.page * 8;
 
-const url = `https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=us&max=${maxResults}&apikey=${process.env.REACT_APP_GNEWS_API_KEY}`;
+const url = `/api/news?category=${this.props.category}&page=${this.state.page}`;
+
 
 
 
